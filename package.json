@@ -1,0 +1,37 @@
+{
+  "name": "girtees",
+  "version": "1.0.0",
+  "description": "Home of the Adventures of Polka Dot Teddy",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePlatinum/girtees.git"
+  },
+  "author": "Emmanuel Adesina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThePlatinum/girtees/issues"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
