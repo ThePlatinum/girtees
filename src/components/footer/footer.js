@@ -1,8 +1,8 @@
 import { FacebookOutlined, Instagram, Twitter, YouTube } from "@mui/icons-material";
 import {Button, Container, InputAdornment, Link, TextField, Typography } from "@mui/material";
-import { Box, fontSize } from "@mui/system";
+import { Box } from "@mui/system";
 
-export default function Footer(){
+export default function Footer( {menuItems} ){
   return (
     <Container sx={{
       paddingTop:'10vh',
@@ -13,9 +13,10 @@ export default function Footer(){
         justifyContent: 'center',
         backgroundColor:'#FEEBA7',
         alignItems: 'center',
-        gap: 10
+        gap: 10,
+        flexWrap:'wrap'
         }}>
-          <Typography class='gray1000'
+          <Typography className='gray1000'
           sx={{
             fontWeight:500,
             fontSize:'1.5rem'
@@ -50,12 +51,14 @@ export default function Footer(){
         paddingTop:'10vh',
         display: 'flex',
         justifyContent: 'space-between',
-        paddingBottom:'5vh'
+        paddingBottom:'5vh',
+        flexWrap:'wrap'
         }}>
         <Box sx={{ 
         display: 'flex',
         justifyContent: 'space-between',
-        flexGrow: 0.5
+        flexGrow: 0.5,
+        flexWrap:'wrap'
         }}>
           <Box>
             <Typography className="grey1000">Company Info</Typography>
@@ -67,11 +70,13 @@ export default function Footer(){
               fontSize: '14px',
               textDecoration: 'none',
               }}>
-                <Link href="#" underline="none">Shipping Policy</Link>
-              
-                <Link href="#" underline="none">Privacy Policy</Link>
-              
-                <Link href="#" underline="none">Terms of Service</Link>
+                {
+                  menuItems.map((item, i)=>{
+                    return (
+                      <Link href={item.route} underline="none" key={i}> {item.name} </Link>
+                    )
+                  })
+                }
             </Typography>
           </Box>
           <Box>
@@ -114,7 +119,11 @@ export default function Footer(){
         <Box sx={{
           justifyContent:'center'
         }}>
-          <Box>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 3
+            }}>
             <FacebookOutlined />
             <Instagram />
             <YouTube />
